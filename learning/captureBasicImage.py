@@ -12,8 +12,10 @@ def main():
   retval, image = camera.retrieve()
   camera.release()
   # print image
-  for thing in image:
-    print thing
+  # for thing in image:
+    # print thing
+  print image.size
+  # print help(image)
   cv2.imwrite("test.png", image)
 
 
