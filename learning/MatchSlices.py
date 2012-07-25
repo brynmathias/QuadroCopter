@@ -14,9 +14,11 @@ def main():
                      # cv.IPL_DEPTH_8U,3)
   # cv.Copy(image,image2)
   
-  size = cv.GetSize(image2)
-  split = utils.returnSplitImg(sub_x = int(size[0]/10) , sub_y = size[1], img = image)
-  split2 = utils.returnSplitImg(sub_x = int(size[0]/10) , sub_y = size[1], img = image2)
+  size   = cv.GetSize(image2)
+  split  = utils.returnSplitImg( sub_x = int(size[0]/size[0]) , sub_y = size[1], img = image  )
+  split2 = utils.returnSplitImg( sub_x = int(size[0]/size[0]) , sub_y = size[1], img = image2 )
+  
+  # print "Total number of slices is %i"%int(size[0]/(size[0]/180))
   
   window,screen = utils.setUpPyGameWindow()
   
@@ -27,7 +29,7 @@ def main():
   print matched.matchedIndex, matched.matchedValue
   for image in matched.compareMats:
     utils.drawInWindow(image,screen,window)
-    raw_input()
+    # raw_input()
 
 if __name__=="__main__":
   main()

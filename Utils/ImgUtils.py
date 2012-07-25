@@ -27,7 +27,7 @@ def getImage(CameraNo = 0, Capture = 0,Debug = False):
                       cv.IPL_DEPTH_8U,3)
   cv.Copy(image,image2)
   if Debug:
-    cv.SaveImage("imageAt_%s.png"%time.strftime("%a, %d %b %Y %H:%M:%S"),image2)
+    cv.SaveImage("imageAt_%s.png"%time.strftime("%a_%d_%b_%Y_%H:%M:%S"),image2)
   
   return image2
 
