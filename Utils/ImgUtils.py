@@ -18,11 +18,9 @@ def returnSplitImg(sub_x = None, sub_y = None, img = None):
   
   
   
-def getImage(CameraNo = 0, Capture = 0,Debug = False):
+def getImage(captureDevice= None,Debug = False):
   """Set up the camera and pull an image"""
-  cv.NamedWindow("camera raw",0)
-  capture = cv.CreateCameraCapture(0)
-  image = cv.QueryFrame(capture)
+  image = cv.QueryFrame(captureDevice)
   image2 = cv.CreateImage(cv.GetSize(image),
                       cv.IPL_DEPTH_8U,3)
   cv.Copy(image,image2)
