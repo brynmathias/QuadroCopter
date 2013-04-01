@@ -22,7 +22,7 @@ def getImage(captureDevice= None,Debug = False):
   """Set up the camera and pull an image"""
   image = cv.QueryFrame(captureDevice)
   image2 = cv.CreateImage(cv.GetSize(image),
-                      cv.IPL_DEPTH_8U,3)
+                          cv.IPL_DEPTH_8U,3)
   cv.Copy(image,image2)
   if Debug:
     cv.SaveImage("imageAt_%s.png"%time.strftime("%a_%d_%b_%Y_%H:%M:%S"),image2)
